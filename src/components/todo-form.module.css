@@ -1,0 +1,89 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  --set-center: center;
+  --border-size: 0.15rem;
+  --set-none: none;
+  --set-action-bg: #ffffff;
+  --text-color: #f8f8f8;
+  --danger-color: #ff4441;
+  --warning-color: rgb(255, 255, 0);
+  --main-color: #2a65d3;
+}
+
+.form input {
+  text-align: center;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+
+  width: 60rem;
+  height: 2rem;
+
+  border: none;
+  outline: none;
+  border-bottom: 0.1rem solid var(--set-action-bg);
+  border-radius: 2rem;
+  background-color: var(--set-action-bg);
+}
+
+.form button {
+  position: relative;
+  margin: 1.25rem 0 0.5rem 0;
+  padding: 0.9rem 4.75rem;
+
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--set-action-bg);
+  transition: color 300ms ease-in;
+}
+
+.borderPop::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: var(--border-size) solid var(--set-action-bg);
+  border-radius: 1rem;
+  color: #0000;
+  transition: top, right, bottom, left, 300ms ease-in;
+}
+
+.borderPop:hover:before,
+.borderPop:focus:before {
+  top: calc(var(--border-size) * -4);
+  right: calc(var(--border-size) * -4);
+  bottom: calc(var(--border-size) * -4);
+  left: calc(var(--border-size) * -4);
+}
+
+.form button:hover,
+.form button:focus {
+  color: var(--main-color);
+}
+
+.formError {
+  color: var(--danger-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.formMaximum {
+  color: var(--warning-color);
+}
+
+@media screen and (max-width: 1024px) {
+  .form input {
+    width: 30rem;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
