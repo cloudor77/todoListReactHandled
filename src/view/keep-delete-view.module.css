@@ -1,26 +1,28 @@
 .KeepOrDeleteBtn {
   position: relative;
-  width: 7rem;
+  width: 9rem;
 
   display: inline-block;
 
   margin: 0rem 0 0 2.25rem;
-  padding: 0.3rem 1rem;
+  padding: 0.6rem 1rem;
 
   border: none;
+  border-radius: 1.2em;
   cursor: pointer;
-  border-radius: 1em;
-  background-color: beige;
 
+  background-color: beige;
   --border-radius: 1rem;
   --danger-color: #ff0400;
   --okay-color: #228b22;
+  --main-color: #2a65d3;
 }
 
 .deleteText {
   text-align: center;
-
-  font-size: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 300ms ease-in;
 }
 
 .deleteBtn {
@@ -33,6 +35,7 @@
   text-align: center;
   border-start-start-radius: var(--border-radius);
   border-end-start-radius: var(--border-radius);
+  transform: scale(1.1);
 }
 
 .keepBtn {
@@ -44,22 +47,41 @@
   background-color: var(--okay-color);
   border-start-end-radius: var(--border-radius);
   border-end-end-radius: var(--border-radius);
+  transform: scale(1.1);
+}
+
+.deleteBtn,
+.keepBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .deleteBtn span,
 .keepBtn span {
-  position: relative;
-  text-align: center;
-  margin: 5px auto;
   color: white;
-  display: block;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 
 @media screen and (max-width: 1024px) {
   .KeepOrDeleteBtn {
-    width: 4rem;
+    padding: 0.5rem 1rem;
   }
+
+  .deleteText {
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+
+  .deleteBtn span,
+  .keepBtn span {
+    font-size: 0.85rem;
+  }
+}
+
+.KeepOrDeleteBtn:hover,
+.KeepOrDeleteBtn:focus {
+  color: var(--main-color);
 }

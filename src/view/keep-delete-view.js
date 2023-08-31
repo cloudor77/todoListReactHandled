@@ -15,7 +15,11 @@ const KeepOrDelete = (props) => {
 
   return (
     <div className={`${classes.KeepOrDeleteBtn}`}>
-      <div onClick={revealOptions} className={classes.deleteText}>
+      <div
+        onClick={revealOptions}
+        className={classes.deleteText}
+        style={{ transform: isShown ? "scaleX(0.9)" : "" }}
+      >
         Delete
       </div>
       {isShown && (

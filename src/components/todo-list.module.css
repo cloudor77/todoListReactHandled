@@ -1,15 +1,11 @@
-.toDoList {
-  display: inline-block;
-}
-
 .todoList ul {
+  padding-bottom: 0.5rem;
   list-style: none;
+  height: auto;
 }
 
 .noToDo {
   padding: 2rem 0;
-  text-align: center;
-}
 
-@media screen {
+  text-align: center;
 }

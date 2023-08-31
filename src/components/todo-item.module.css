@@ -9,35 +9,27 @@
   flex-direction: row;
   text-transform: uppercase;
   word-break: break-all;
-
-  --text-color: #f8f8f8;
 }
 
 .listItem li {
+  width: 90%;
+
+  text-align: start;
   font-size: 1.15rem;
   font-weight: 600;
+
   color: var(--text-color);
-
-  justify-self: start;
 }
-
-/* .listItem button {
-  display: inline-block;
-  align-self: center;
-
-  margin: 0rem 0 0 2.25rem;
-  padding: 0.3rem 1.5rem;
-
-  border: none;
-  cursor: pointer;
-  border-radius: 1em;
-} */
 
 .todoNum {
   margin: 0;
-  font-size: 1.15rem;
   padding-right: 1rem;
+
+  font-size: 1.15rem;
+
   color: var(--text-color);
+
+  word-break: normal;
 }
 
 .listItem button:hover {
@@ -47,15 +39,12 @@
 
 @media screen and (max-width: 1024px) {
   .listItem {
-    width: 25rem;
+    width: 90%;
     height: 4rem;
-    align-items: center;
   }
 
   .listItem li {
-    width: 20rem;
     font-size: 0.8rem;
     font-weight: 700;
-    text-align: justify;
   }
 }

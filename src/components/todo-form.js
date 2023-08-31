@@ -4,8 +4,7 @@ import { useState } from "react";
 const ToDoForm = (props) => {
   const [newToDo, setNewToDo] = useState("");
   const [lengthError, setLengthError] = useState(false);
-  const [onChangeValue, setOnChangeValue] = useState(false);
-  const [emptyValue, setEmptyValue] = useState(false);
+  const [onChangeValue, setOnChangeValue] = useState("");
 
   const inputOnChangeValue = (e) => {
     if (e.target.value === "") {
@@ -14,7 +13,7 @@ const ToDoForm = (props) => {
       setOnChangeValue(false);
     }
 
-    if (e.target.value.length >= 60) {
+    if (e.target.value.length >= 100) {
       setLengthError(true);
       return false;
     }
@@ -27,13 +26,15 @@ const ToDoForm = (props) => {
     e.preventDefault();
 
     if (newToDo.trim() === "") {
-      setEmptyValue(true);
+      setOnChangeValue(true);
       return false;
     }
 
     props.submit(newToDo);
-    setEmptyValue(false);
+
     setNewToDo("");
+    setLengthError(false);
+    setOnChangeValue(false);
   };
 
   console.log(newToDo);
@@ -48,7 +49,7 @@ const ToDoForm = (props) => {
         value={newToDo}
       />
 
-      {emptyValue || onChangeValue ? (
+      {onChangeValue && onChangeValue ? (
         <h4 className={classes.formError}>Todo value cannot be empty...</h4>
       ) : (
         ""

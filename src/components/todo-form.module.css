@@ -3,15 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  --set-center: center;
-  --border-size: 0.15rem;
-  --set-none: none;
-  --set-action-bg: #ffffff;
-  --text-color: #f8f8f8;
-  --danger-color: #ff4441;
-  --warning-color: rgb(255, 255, 0);
-  --main-color: #2a65d3;
 }
 
 .form input {
@@ -38,9 +29,11 @@
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 1px;
+
   border: none;
   border-radius: 1rem;
   background-color: var(--set-action-bg);
+
   transition: color 300ms ease-in;
 }
 
@@ -51,8 +44,10 @@
   right: 0;
   bottom: 0;
   left: 0;
+
   border: var(--border-size) solid var(--set-action-bg);
   border-radius: 1rem;
+
   color: #0000;
   transition: top, right, bottom, left, 300ms ease-in;
 }
@@ -71,9 +66,10 @@
 }
 
 .formError {
-  color: var(--danger-color);
   font-weight: 600;
   font-size: 1.25rem;
+
+  color: var(--danger-color);
 }
 
 .formMaximum {
@@ -82,8 +78,10 @@
 
 @media screen and (max-width: 1024px) {
   .form input {
-    width: 30rem;
+    width: 90%;
+
     font-size: 0.7rem;
     text-align: center;
+    word-break: break-all;
   }
 }

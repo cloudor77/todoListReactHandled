@@ -1,5 +1,5 @@
 import "./App.css";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ToDoForm from "./components/todo-form";
 import ToDoTop from "./components/todo-top";
 import ToDoList from "./components/todo-list";
@@ -32,11 +32,11 @@ function App() {
   console.log(todos);
 
   return (
-    <Fragment>
+    <div className="App">
       <ToDoTop />
       <ToDoForm submit={addNewTodo} />
       <ToDoList todos={todos} removeTodo={removeTodo} />
-    </Fragment>
+    </div>
   );
 }
 
